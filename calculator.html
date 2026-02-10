@@ -3,40 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <style type="text/css">
-        
-    </style>
-    <script type="text/javascript">
-        var number1=0.0;
-        var number2=0.0;
-        var result=0.0;
-        var isequal=0;
-        var isdot=0;
-        var operation="";
-        function num(n){
-            if(isequal==1){
-                document.getElementById("result").value="";
-                isequal=0;
-            }
-            document.getElementById("resul").value=document.
-            getElementById("result").value+n;
-        }
-        function myoperator(){
-            if(isdot==0){
-                if(isequal==1){
-                    document.getElementById("result").value="";
-                    isequal=0;
-                }
-                document.getElementById("result").value=document.
-                getElementById("result").value+".";
-                isdot=1;
-            }
-        }
-        
-    </script>
+    <title>Document</title>
 </head>
 <body>
-    
+<form>
+    <label for="">Enter first number:</label>
+    <input type="text" id="n1" name="num1" />
+    <br>
+    <label for="">Enter second number:</label>
+    <input type="text" id="n2" name="num2" /><br>
+    <label for="">Result:</label>
+    <input type="text"  id="result" /><br>
+    <input type="button"  onclick="sum()" value="Sum"/>
+    <input type="button"  onclick="sub()" value="Sub"/>
+    <input type="button"  onclick="mul()" value="Mul"/>
+    <input type="button"  onclick="div()" value="Div"/>
+</form>
+
+    <script>
+        function sum() {
+            var n1=parseFloat(document.getElementById("n1").value);
+            var n2=parseFloat(document.getElementById("n2").value);
+            document.getElementById("result").value=n1+n2;
+        }
+        function sub() {
+            var n1=parseFloat(document.getElementById("n1").value);
+            var n2=parseFloat(document.getElementById("n2").value);
+            document.getElementById("result").value=n1-n2;
+        }
+        function mul() {
+            var n1=parseFloat(document.getElementById("n1").value);
+            var n2=parseFloat(document.getElementById("n2").value);
+            document.getElementById("result").value=n1*n2;
+        }
+        function div() {
+            var n1=parseFloat(document.getElementById("n1").value);
+            var n2=parseFloat(document.getElementById("n2").value);
+            if(n2!=0)
+                document.getElementById("result").value=n1/n2;
+            else
+                document.getElementById("result").value="division by zero is not allowed";
+        }
+    </script>
 </body>
 </html>

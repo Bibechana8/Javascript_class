@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>event object example</title>
+</head>
+<body>
+<p id="para">this is is some paragraph this is is some paragraphthis is is some paragraphthis is is some paragraphthis is is some paragraphthis is is some paragraph
+    this is is some paragraphthis is is some paragraphthis is is some paragraph
+    this is is some paragraphthis is is some paragraphthis is is some paragraph
+<a href="multiply table.html" id="myanchor">goto multiply table</a>
+</p>
+<script type="text/javascript">
+
+document.getElementById("myanchor").addEventListener("click",function(event){
+    alert("anchor is clicked ");
+ event.preventDefault();
+event.stopPropagation();
+});
+
+document.getElementById("para").addEventListener("click",function(event){
+    alert("paragraph is clicked");
+});
+
+</script>
+</body>
+</html>

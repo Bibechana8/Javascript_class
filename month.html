@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<label>Enter month (1–12):</label>
+<input type="number" id="month">
+<button onclick="getMonthName()">Get Month</button>
+
+<p id="result"></p>
+
+<script>
+function getMonthName() {
+    const months = [
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
+    ];
+
+    let m = document.getElementById("month").value;
+    document.getElementById("result").innerText = months[m - 1];
+}
+</script>
+
+</body>
+</html>

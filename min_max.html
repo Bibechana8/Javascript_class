@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Max</title>
+</head>
+
+<body>
+    <form>
+        <label>Enter numbers (comma separated)</label><br>
+        <input type="text" id="text"><br><br>
+        <input type="button" onclick="checkNumber()" value="Check">
+    </form>
+
+    <script>
+        function checkNumber() {
+            var input = document.getElementById("text").value;
+
+            // Convert string to array of numbers
+            var arr = input.split(",").map(Number);
+
+            var minimum = Math.min(...arr);
+            var maximum = Math.max(...arr);
+
+            alert("Minimum value is: " + minimum);
+            alert("Maximum value is: " + maximum);
+        }
+    </script>
+</body>
+</html>

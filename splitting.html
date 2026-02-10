@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split String</title>
+
+    <script>
+        function splitString() {
+            var text = document.getElementById("text1").value;
+            var separator = document.getElementById("sep").value;
+            var output = document.getElementById("output");
+
+            output.innerHTML = ""; // clear previous output
+
+            if (separator === "space") {
+                separator = " ";
+            }
+
+            var result = text.split(separator);
+
+            for (let i = 0; i < result.length; i++) {
+                output.innerHTML += result[i] + "<br>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+   <form>
+        <label>Enter the string</label><br>
+        <input type="text" id="text1"><br><br>
+
+        <label>Select Separator</label><br>
+        <select id="sep">
+            <option value="" disabled selected>Select an option</option>
+            <option value="/">/</option>
+            <option value=",">,</option>
+            <option value="space">space</option>
+            <option value="_">_</option>
+        </select><br><br>
+
+        <input type="button" onclick="splitString()" value="Split">
+   </form>
+
+   <p id="output"></p>
+</body>
+</html>
