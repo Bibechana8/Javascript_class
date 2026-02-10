@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var arr = new Array();
+        var i=0;
+        var sum=0;
+        
+        function addtoarray()
+        {
+            var item=document.getElementById("num1").value;
+            arr.push(item);
+            document.getElementById("result").innerHTML="Array: " + arr.join(", ");
+            document.getElementById("num1").value="";
+            document.getElementById("num1").focus();
+        }
+        
+        // Method 1: Using for loop
+        function displaysum()
+        {
+            sum = 0;
+            for(i=0; i<arr.length; i++)
+            {
+                sum = sum + parseFloat(arr[i]);
+            }
+            window.alert("sum of array items is: " + sum);
+            document.getElementById("result").innerHTML = "Array: " + arr.join(", ") + "<br>Sum (for loop): " + sum;
+        }
+        
+        // Method 2: Using reduce (modern approach)
+        function displaySumReduce()
+        {
+            var total = arr.reduce(function(acc, val) {
+                return acc + parseFloat(val);
+            }, 0);
+            window.alert("sum of array items is: " + total);
+            document.getElementById("result").innerHTML = "Array: " + arr.join(", ") + "<br>Sum (reduce): " + total;
+        }
+        function cancel()
+        {
+            arr = [];
+            sum = 0;
+            document.getElementById("result").innerHTML = "Array cleared.";
+            document.getElementById("num1").value = "";
+            document.getElementById("num1").focus();
+        }
+        function removeItemFromArray()
+        {
+            var item=document.getElementById("num1").value;
+            var index = arr.indexOf(item);
+            if (index > -1) {
+                arr.splice(index, 1);
+                document.getElementById("result").innerHTML="Array after removal: " + arr.join(", ");
+            } else {
+                window.alert("Item not found in array.");
+            }
+            document.getElementById("num1").value="";
+            document.getElementById("num1").focus();
+        }
+        
+    </script>
+    </head>
+    <body>
+        <div>
+            <form>
+                <label>Enter a number:</label>
+                <input type="number" name="number" id="num1" value="10"/>
+                <br><br>
+                <input type="button" name="btn1" value="add to array" onclick="addtoarray();"/>
+                <input type="button" name="btn2" value="display sum" onclick="displaysum();"/>
+                <!-- <input type="button" name="btn3" value="display sum (reduce)" onclick="displaySumReduce();"/>
+                 -->
+                <input type="button" name="btn3" value="cancel" onclick="cancel();"/>
+                <input type="button" name="btn4" value="Remove item from Array" onclick="removeItemFromArray();"/>
+
+            </form>
+            <div id="result"></div>
+        </div>
+    </body>
+</body>
+</html>

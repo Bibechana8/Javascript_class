@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Dialog Box & Window Object</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 8px 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Dialog Box & Window Object Demo</h2>
+
+  <button onclick="showAlert()">Alert Box</button><br>
+  <button onclick="showConfirm()">Confirm Box</button><br>
+  <button onclick="showPrompt()">Prompt Box</button><br>
+  <button onclick="openNewWindow()">Open New Window</button>
+
+  <script>
+    // Alert dialog
+    function showAlert() {
+      alert("This is an alert dialog box!");
+    }
+
+    // Confirm dialog
+    function showConfirm() {
+      let result = confirm("Do you want to continue?");
+      if (result) {
+        alert("You clicked OK");
+      } else {
+        alert("You clicked Cancel");
+      }
+    }
+
+    // Prompt dialog
+    function showPrompt() {
+      let name = prompt("Enter your name:");
+      if (name !== null && name !== "") {
+        alert("Hello, " + name + "!");
+      } else {
+        alert("No name entered");
+      }
+    }
+
+    // Window object example
+    function openNewWindow() {
+      window.open(
+        "https://www.example.com",
+        "_blank",
+        "width=600,height=400"
+      );
+    }
+  </script>
+
+</body>
+</html>

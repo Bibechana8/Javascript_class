@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style type="text/css">
+        
+    </style>
+    <script type="text/javascript">
+        var number1=0.0;
+        var number2=0.0;
+        var result=0.0;
+        var isequal=0;
+        var isdot=0;
+        var operation="";
+        function num(n){
+            if(isequal==1){
+                document.getElementById("result").value="";
+                isequal=0;
+            }
+            document.getElementById("resul").value=document.
+            getElementById("result").value+n;
+        }
+        function myoperator(){
+            if(isdot==0){
+                if(isequal==1){
+                    document.getElementById("result").value="";
+                    isequal=0;
+                }
+                document.getElementById("result").value=document.
+                getElementById("result").value+".";
+                isdot=1;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
