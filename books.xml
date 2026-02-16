@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<bookstore>
+<book category="cooking">
+<title lang="en">Everyday Italian</title>
+<author>Giada De laurentiis</author>
+<year>2005</year>
+<price>30.00</price>
+</book>
+
+<book category="children">
+<title lang="en">Harry potter</title>
+<author>J K. Rowling</author>
+<year>2005</year>
+<price>29.99</price>
+</book>
+
+<book category="Teachers">
+<title lang="en">Man the middle man</title>
+<author> Krishna kumar</author>
+<year>2006</year>
+<price>300</price>
+</book>
+
+<book category="Adults">
+<title lang="en">It ends with us</title>
+<author> Coolen hoever</author>
+<year>2009</year>
+<price>700</price>
+</book>
+
+<book category="Juniors">
+<title lang="en">Reminders of him</title>
+<author> Ramesh Paudel</author>
+<year>2010</year>
+<price>10000</price>
+</book>
+
+</bookstore>
+
